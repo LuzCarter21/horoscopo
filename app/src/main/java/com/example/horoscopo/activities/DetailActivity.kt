@@ -1,6 +1,7 @@
 package com.example.horoscopo.activities
 
 import android.os.Bundle
+import android.view.Menu
 import android.widget.ImageView
 import android.widget.TextView
 import androidx.activity.enableEdgeToEdge
@@ -41,4 +42,10 @@ class DetailActivity : AppCompatActivity() {
         imageZodiac.setImageResource(horoscope.zodiacIcon)
 
     }
+
+    override fun onCreateOptionsMenu(menu: Menu?): Boolean {
+        menuInflater.inflate(R.menu.detail_menu,menu)
+        return true
+    }
+
 }

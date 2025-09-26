@@ -2,6 +2,7 @@ package com.example.horoscopo.activities
 
 import android.content.Intent
 import android.os.Bundle
+import android.view.Menu
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
@@ -33,6 +34,11 @@ class MainActivity : AppCompatActivity() {
 
         recyclerView.adapter = adapter
         recyclerView.layoutManager = LinearLayoutManager(this)
+    }
+
+    override fun onCreateOptionsMenu(menu: Menu?): Boolean {
+        menuInflater.inflate(R.menu.main_menu,menu)
+        return true
     }
 
     fun onItemClickListener(position: Int) {

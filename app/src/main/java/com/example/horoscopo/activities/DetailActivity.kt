@@ -1,6 +1,8 @@
 package com.example.horoscopo.activities
 
 import android.os.Bundle
+import android.widget.ImageView
+import android.widget.TextView
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
@@ -9,6 +11,13 @@ import com.example.horoscopo.R
 import com.example.horoscopo.data.Horoscope
 
 class DetailActivity : AppCompatActivity() {
+
+    lateinit var nameZodiac: TextView
+    lateinit var datesZodiac: TextView
+
+    lateinit var imageZodiac: ImageView
+
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         enableEdgeToEdge()
@@ -19,8 +28,17 @@ class DetailActivity : AppCompatActivity() {
             insets
         }
 
-        val id = intent.getStringExtra(HOROSCOPE_ID)!!
+        nameZodiac = findViewById(R.id.zodiacName)
+        datesZodiac = findViewById(R.id.zodiacDate)
+        imageZodiac = findViewById(R.id.zodiacImage)
+
+        val id = intent.getStringExtra("HOROSCOPE_ID")!!
 
         val horoscope = Horoscope.getByID(id)
+
+        nameZodiac.setText(horoscope.name)
+        datesZodiac.setText(horoscope.dates)
+        imageZodiac.setImageResource(horoscope.zodiacIcon)
+
     }
 }

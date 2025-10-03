@@ -1,12 +1,18 @@
-<?xml version="1.0" encoding="utf-8"?>
 <menu xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <item
+        android:id="@+id/listmode"
+        android:icon="@drawable/grid_view"
+        android:title="List Mode"
+        app:showAsAction="ifRoom"/>
 
     <item
         android:id="@+id/searchIcon"
         android:icon="@drawable/search_icon_menu"
         android:title="@string/menu_search"
-        app:actionViewClass="com.google.android.material.search.SearchView"
-        app:showAsAction="always|collapseActionView"/>
+        app:actionViewClass="androidx.appcompat.widget.SearchView"
+        app:showAsAction="always|collapseActionView"
+        android:theme="@style/Widget.CustomSearchView"/>
 
 </menu>

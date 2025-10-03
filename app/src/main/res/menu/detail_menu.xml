@@ -9,9 +9,9 @@
     app:showAsAction="always"/>
 
     <item
-        android:id="@+id/searchIcon"
-        android:icon="@drawable/search_icon_menu"
-        android:title="@string/menu_search"
+        android:id="@+id/shareIcon"
+        android:icon="@drawable/share_icon"
+        android:title="@string/menu_share"
         app:showAsAction="always"/>
 
 </menu>
